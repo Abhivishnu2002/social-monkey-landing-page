@@ -15,16 +15,16 @@ export function Hero() {
   return (
     <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center">
       {/* Background Elements */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full bg-[#7B2CFF]/20 blur-[120px] mix-blend-screen" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-[#FF2EA6]/10 blur-[100px] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-[url('/Social%20monkey_page-0001.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#05010F]/80 via-[#05010F]/90 to-[#05010F]" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         {/* Left Content */}
-        <div className="flex flex-col gap-8 max-w-2xl">
+        <div className="flex flex-col gap-8 w-full max-w-2xl mx-auto lg:mx-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,16 +80,17 @@ export function Hero() {
                 <input 
                   type="email" 
                   placeholder="Enter your email address" 
-                  className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/50"
+                  className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/50 focus:ring-0"
                 />
               </div>
-              <button className="animated-gradient-button sm:w-auto w-full py-4 uppercase font-bold text-sm tracking-wider gold-gradient">
-                <span className="text-black">NOTIFY ME</span>
+              <button className="animated-gradient-button sm:w-auto w-full py-4 uppercase font-bold text-sm tracking-wider gold-gradient relative overflow-hidden group">
+                <span className="text-black relative z-10 transition-colors duration-300">NOTIFY ME</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </div>
-            {/* Fake button for correct visual from design */}
-            <div className="absolute right-2 top-2 bottom-2 rounded-full bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] flex items-center justify-center px-8 sm:flex hidden hover:scale-105 transition-transform cursor-pointer shadow-[0_0_20px_rgba(255,191,54,0.4)]">
-                <span className="text-black font-bold uppercase text-sm tracking-wider">Notify Me</span>
+            {/* Fake button overlay for exact design match from screenshots */}
+            <div className="absolute right-2 top-2 bottom-2 rounded-full bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] items-center justify-center px-8 sm:flex hidden hover:scale-[1.02] transition-transform cursor-pointer shadow-[0_0_20px_rgba(255,191,54,0.4)]">
+                <span className="text-black font-bold uppercase text-sm tracking-wider">NOTIFY ME</span>
             </div>
           </motion.div>
         </div>
@@ -99,26 +100,26 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative h-[600px] lg:h-[800px] w-full flex items-center justify-center lg:justify-end perspective-1000 mt-12 lg:mt-0"
+          className="relative h-[500px] sm:h-[600px] lg:h-[800px] w-full flex items-center justify-center lg:justify-end mt-16 lg:mt-0"
         >
           {/* Back Phone */}
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute right-4 md:right-12 lg:-right-4 top-[10%] lg:top-[5%] z-10 origin-bottom scale-90 md:scale-100 opacity-80"
-            style={{ transform: "rotateY(-15deg) rotateZ(5deg)" }}
+            className="absolute left-1/2 lg:left-auto lg:right-[15%] top-[-5%] lg:top-[5%] z-10 scale-[0.8] sm:scale-90 md:scale-100 opacity-80"
+            style={{ transform: "translateX(-40%) rotateY(-15deg) rotateZ(5deg)" }}
           >
-            <PhoneMockup glowColor="pink" imageSrc="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000&auto=format&fit=crop" />
+            <PhoneMockup glowColor="pink" imageSrc="/billUI.jpg" />
           </motion.div>
 
           {/* Front Phone */}
           <motion.div
             animate={{ y: [0, 15, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute left-0 md:left-[10%] lg:left-[15%] bottom-[5%] z-20 origin-bottom scale-95 md:scale-110"
-            style={{ transform: "rotateY(15deg) rotateZ(-5deg)" }}
+            className="absolute left-1/2 lg:left-auto lg:right-[35%] bottom-[-5%] lg:bottom-[5%] z-20 scale-[0.85] sm:scale-95 md:scale-110 shadow-2xl"
+            style={{ transform: "translateX(-60%) rotateY(15deg) rotateZ(-5deg)" }}
           >
-            <PhoneMockup glowColor="purple" />
+            <PhoneMockup glowColor="purple" imageSrc="/PhoneUI.jpg" />
           </motion.div>
         </motion.div>
       </div>

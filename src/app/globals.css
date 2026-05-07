@@ -13,6 +13,10 @@
 }
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+  }
+  
   body {
     background-color: var(--color-monkey-bg);
     color: var(--color-monkey-white);

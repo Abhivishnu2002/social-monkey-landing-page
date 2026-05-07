@@ -43,8 +43,8 @@ export function LaunchBanner() {
   }, []);
 
   return (
-    <div className="container mx-auto px-6 md:px-12 -mt-10 relative z-30">
-      <div className="glass-card bg-[#11052C]/80 border-[#7B2CFF]/30 p-6 md:p-8 rounded-[2rem] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-30">
+      <div className="glass-card bg-[#11052C]/80 border-[#7B2CFF]/30 p-6 md:p-8 rounded-[2rem] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden w-full">
         {/* Glow Effects */}
         <div className="absolute left-0 top-0 w-64 h-64 bg-[#7B2CFF]/20 blur-[80px] rounded-full pointer-events-none" />
         <div className="absolute right-0 bottom-0 w-64 h-64 bg-[#FF2EA6]/20 blur-[80px] rounded-full pointer-events-none" />
@@ -97,7 +97,7 @@ export function LaunchBanner() {
         </div>
 
         {/* Right: Notify CTA */}
-        <div className="flex items-center gap-6 relative z-10 w-full lg:w-auto">
+        <div className="flex items-center gap-6 relative z-10 w-full lg:w-auto mt-4 lg:mt-0">
           <div className="w-14 h-14 rounded-full bg-[#7B2CFF]/20 border border-[#7B2CFF]/50 flex items-center justify-center shrink-0">
             <Bell className="text-[#FF2EA6]" size={24} />
           </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Instagram, Facebook, Twitter } from "@/components/ui/Icons";
@@ -37,13 +38,16 @@ export function Navbar() {
         scrolled ? "bg-[#05010F]/80 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent py-6"
       )}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative z-50 flex items-center gap-2">
-          <div className="font-heading font-black text-2xl tracking-tighter leading-none flex flex-col">
-            <span className="text-[#7B2CFF]">S<span className="text-white">OC</span>IAL</span>
-            <span className="text-white">M<span className="text-[#FF2EA6]">ON</span>KEY</span>
-          </div>
+        <Link href="/" className="relative z-50 flex items-center">
+          <Image 
+            src="/socialmonkey.png" 
+            alt="Social Monkey Logo" 
+            width={160} 
+            height={60} 
+            className="h-10 sm:h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -87,6 +91,13 @@ export function Navbar() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="fixed inset-0 bg-[#05010F] z-40 flex flex-col items-center justify-center gap-8 md:hidden"
         >
+          <Image 
+            src="/socialmonkey.png" 
+            alt="Social Monkey Logo" 
+            width={180} 
+            height={70} 
+            className="mb-8 w-auto h-16 object-contain"
+          />
           {navLinks.map((link, idx) => (
             <Link
               key={idx}
