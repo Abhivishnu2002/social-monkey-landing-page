@@ -29,7 +29,7 @@ const steps = [
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="relative py-24 overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         {/* Header */}
         <motion.div 
@@ -47,10 +47,10 @@ export function HowItWorks() {
         </motion.div>
 
         {/* Steps */}
-        <div className="relative flex flex-col md:flex-row items-start justify-between max-w-5xl mx-auto gap-10 md:gap-0">
+        <div className="relative">
           
-          {/* Connecting Line (Desktop) */}
-          <div className="hidden md:block absolute top-[70px] left-[10%] right-[10%] h-[2px] bg-white/10 z-0">
+          {/* Connecting Line (Desktop Only) */}
+          <div className="hidden lg:block absolute top-[70px] left-[12%] right-[12%] h-[2px] bg-white/10 z-0">
              <motion.div 
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
@@ -60,31 +60,33 @@ export function HowItWorks() {
              />
           </div>
 
-          {steps.map((step, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-              className="relative z-10 flex flex-col items-center text-center max-w-[200px] mx-auto group"
-            >
-              {/* Step Number */}
-              <div className="w-8 h-8 rounded-full bg-[#7B2CFF] text-white font-bold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(123,44,255,0.6)]">
-                {idx + 1}
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6 relative z-10">
+            {steps.map((step, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.2 }}
+                className="flex flex-col items-center text-center max-w-[240px] mx-auto group"
+              >
+                {/* Step Number */}
+                <div className="w-8 h-8 rounded-full bg-[#7B2CFF] text-white font-bold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(123,44,255,0.6)]">
+                  {idx + 1}
+                </div>
 
-              {/* Icon Circle */}
-              <div className="w-[140px] h-[140px] rounded-full border-2 border-white/10 bg-[#05010F] flex items-center justify-center mb-6 group-hover:border-[#FF2EA6]/50 group-hover:shadow-[0_0_30px_rgba(255,46,166,0.3)] transition-all duration-500 relative">
-                <div className="absolute inset-2 rounded-full border border-dashed border-white/20 group-hover:animate-[spin_10s_linear_infinite]" />
-                <step.icon className="text-[#7B2CFF] group-hover:text-[#FF2EA6] transition-colors duration-300" size={48} strokeWidth={1.5} />
-              </div>
+                {/* Icon Circle */}
+                <div className="w-[140px] h-[140px] rounded-full border-2 border-white/10 bg-[#05010F] flex items-center justify-center mb-6 group-hover:border-[#FF2EA6]/50 group-hover:shadow-[0_0_30px_rgba(255,46,166,0.3)] transition-all duration-500 relative">
+                  <div className="absolute inset-2 rounded-full border border-dashed border-white/20 group-hover:animate-[spin_10s_linear_infinite]" />
+                  <step.icon className="text-[#7B2CFF] group-hover:text-[#FF2EA6] transition-colors duration-300" size={48} strokeWidth={1.5} />
+                </div>
 
-              {/* Text */}
-              <h4 className="text-[#FFBF36] font-bold text-lg mb-2">{step.title}</h4>
-              <p className="text-sm text-white/70 leading-relaxed">{step.desc}</p>
-            </motion.div>
-          ))}
+                {/* Text */}
+                <h4 className="text-[#FFBF36] font-bold text-lg mb-2">{step.title}</h4>
+                <p className="text-sm text-white/70 leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom CTA Banner */}
@@ -93,18 +95,18 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-24 max-w-5xl mx-auto glass-card relative overflow-hidden rounded-[2rem] border-[#7B2CFF]/30 p-8 md:p-12"
+          className="mt-24 w-full glass-card relative overflow-hidden rounded-[2rem] border-[#7B2CFF]/30 p-8 md:p-12"
         >
           {/* Banner Background */}
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574359411659-15573a27fd0c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#05010F] via-[#05010F]/80 to-transparent" />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05010F] via-[#05010F]/80 to-[#05010F]/40" />
           
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
-              <h3 className="text-3xl font-heading font-bold text-white mb-2">Your night out, made simple.</h3>
-              <p className="text-xl gold-gradient font-bold uppercase tracking-wider">More fun. Less hassle.</p>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2">Your night out, made simple.</h3>
+              <p className="text-lg md:text-xl gold-gradient font-bold uppercase tracking-wider">More fun. Less hassle.</p>
             </div>
-            <button className="animated-gradient-button px-10 py-4 text-sm whitespace-nowrap">
+            <button className="animated-gradient-button px-10 py-4 text-sm whitespace-nowrap w-full md:w-auto">
               GET UPDATES
             </button>
           </div>

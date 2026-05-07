@@ -34,11 +34,12 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="relative py-24 overflow-hidden bg-[url('https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-fixed">
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#05010F] via-[#05010F]/95 to-[#05010F]/80 backdrop-blur-[2px]" />
+    <section id="features" className="relative py-24 overflow-hidden bg-[#02000A]">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#7B2CFF]/10 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FF2EA6]/10 blur-[120px] pointer-events-none rounded-full" />
       
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left: Phone Mockup */}
@@ -47,19 +48,20 @@ export function Features() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="flex justify-center lg:justify-end perspective-1000 order-2 lg:order-1"
+            className="flex justify-center lg:justify-end perspective-1000 order-2 lg:order-1 w-full"
           >
             <motion.div
-              animate={{ y: [-15, 15, -15] }}
+              animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               style={{ transform: "rotateY(10deg) rotateZ(-2deg)" }}
+              className="w-full flex justify-center lg:justify-end"
             >
-              <PhoneMockup glowColor="purple" imageSrc="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop" />
+              <PhoneMockup glowColor="purple" imageSrc="/PhoneUI.jpg" />
             </motion.div>
           </motion.div>
 
           {/* Right: Features List */}
-          <div className="flex flex-col gap-10 order-1 lg:order-2">
+          <div className="flex flex-col gap-10 order-1 lg:order-2 w-full max-w-2xl mx-auto lg:mx-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
