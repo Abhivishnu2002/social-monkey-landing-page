@@ -28,16 +28,16 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-24 overflow-hidden">
+    <section id="how-it-works" className="relative py-24 overflow-hidden transform-gpu">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-20 transform-gpu"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-black tracking-tighter uppercase mb-4">
             <span className="text-white">HOW IT </span>
@@ -56,7 +56,7 @@ export function HowItWorks() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
-                className="w-full h-full bg-gradient-to-r from-[#7B2CFF] to-[#FF2EA6] origin-left"
+                className="w-full h-full bg-gradient-to-r from-[#7B2CFF] to-[#FF2EA6] origin-left transform-gpu"
              />
           </div>
 
@@ -66,19 +66,19 @@ export function HowItWorks() {
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                className="flex flex-col items-center text-center max-w-[240px] mx-auto group"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="flex flex-col items-center text-center max-w-[240px] mx-auto group transform-gpu"
               >
                 {/* Step Number */}
-                <div className="w-8 h-8 rounded-full bg-[#7B2CFF] text-white font-bold flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(123,44,255,0.6)]">
+                <div className="w-8 h-8 rounded-full bg-[#7B2CFF] text-white font-bold flex items-center justify-center mb-4 shadow-[0_5px_15px_rgba(123,44,255,0.4)]">
                   {idx + 1}
                 </div>
 
                 {/* Icon Circle */}
-                <div className="w-[140px] h-[140px] rounded-full border-2 border-white/10 bg-[#05010F] flex items-center justify-center mb-6 group-hover:border-[#FF2EA6]/50 group-hover:shadow-[0_0_30px_rgba(255,46,166,0.3)] transition-all duration-500 relative">
-                  <div className="absolute inset-2 rounded-full border border-dashed border-white/20 group-hover:animate-[spin_10s_linear_infinite]" />
-                  <step.icon className="text-[#7B2CFF] group-hover:text-[#FF2EA6] transition-colors duration-300" size={48} strokeWidth={1.5} />
+                <div className="w-[140px] h-[140px] rounded-full border-2 border-white/10 bg-[#05010F] flex items-center justify-center mb-6 group-hover:border-[#FF2EA6]/50 transition-colors duration-500 relative transform-gpu">
+                  <div className="absolute inset-2 rounded-full border border-dashed border-white/20 sm:group-hover:animate-[spin_10s_linear_infinite]" />
+                  <step.icon className="text-[#7B2CFF] group-hover:text-[#FF2EA6] transition-colors duration-300 relative z-10" size={48} strokeWidth={1.5} />
                 </div>
 
                 {/* Text */}
@@ -93,13 +93,13 @@ export function HowItWorks() {
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-24 w-full glass-card relative overflow-hidden rounded-[2rem] border-[#7B2CFF]/30 p-8 md:p-12"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-24 w-full glass-card relative overflow-hidden rounded-[2rem] border-[#7B2CFF]/30 p-8 md:p-12 transform-gpu"
         >
           {/* Banner Background */}
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#05010F] via-[#05010F]/80 to-[#05010F]/40" />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05010F] via-[#05010F]/90 to-[#05010F]/60" />
           
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>

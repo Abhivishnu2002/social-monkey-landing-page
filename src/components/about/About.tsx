@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Flag, Eye, Shield, Calendar, Users, MapPin, Building2 } from "lucide-react";
+import { Flag, Eye, Shield, Calendar, Users, Building2 } from "lucide-react";
 import Image from "next/image";
 
 const stats = [
@@ -31,17 +31,17 @@ const aboutItems = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-24 overflow-hidden">
+    <section id="about" className="relative py-24 overflow-hidden transform-gpu">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           {/* Left Content */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col gap-10 max-w-2xl mx-auto lg:mx-0 w-full"
+            className="flex flex-col gap-10 max-w-2xl mx-auto lg:mx-0 w-full transform-gpu"
           >
             <div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black tracking-tighter uppercase mb-6">
@@ -59,9 +59,9 @@ export function About() {
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="flex items-start gap-6"
+                  className="flex items-start gap-6 transform-gpu"
                 >
                   <div className="w-12 h-12 rounded-full border border-[#7B2CFF]/40 bg-[#7B2CFF]/10 flex items-center justify-center shrink-0">
                     <item.icon className="text-[#7B2CFF]" size={20} />
@@ -77,54 +77,61 @@ export function About() {
 
           {/* Right Images */}
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative h-[600px] w-full hidden lg:block"
+            className="relative h-[600px] w-full hidden lg:block transform-gpu"
           >
+            {/* Optimized Glow Backgrounds for Static Layout */}
+            <div className="absolute top-[10%] right-[10%] w-[200px] h-[200px] bg-[radial-gradient(ellipse_at_center,rgba(255,46,166,0.3)_0%,rgba(255,46,166,0)_70%)] pointer-events-none transform-gpu" />
+            <div className="absolute bottom-[10%] right-[20%] w-[200px] h-[200px] bg-[radial-gradient(ellipse_at_center,rgba(123,44,255,0.3)_0%,rgba(123,44,255,0)_70%)] pointer-events-none transform-gpu" />
+
             {/* Top Right Image */}
             <motion.div 
-              animate={{ y: [-10, 10, -10] }}
+              animate={{ y: [-8, 8, -8] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[5%] right-0 w-[75%] h-[240px] rounded-[2rem] overflow-hidden border border-[#FF2EA6]/40 pink-glow z-10"
+              className="absolute top-[5%] right-0 w-[75%] h-[240px] rounded-[2rem] overflow-hidden border border-[#FF2EA6]/40 z-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform-gpu"
             >
               <Image 
                 src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000&auto=format&fit=crop" 
                 alt="Friends drinking" 
                 fill 
                 className="object-cover"
-                sizes="50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
               />
             </motion.div>
 
             {/* Middle Left Image */}
             <motion.div 
-              animate={{ y: [10, -10, 10] }}
+              animate={{ y: [8, -8, 8] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute top-[30%] left-[5%] w-[60%] h-[220px] rounded-[2rem] overflow-hidden border border-[#FFBF36]/40 shadow-[0_0_20px_rgba(255,191,54,0.3)] z-20"
+              className="absolute top-[30%] left-[5%] w-[60%] h-[220px] rounded-[2rem] overflow-hidden border border-[#FFBF36]/40 shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-20 transform-gpu"
             >
               <Image 
                 src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1000&auto=format&fit=crop" 
                 alt="Party crowd" 
                 fill 
                 className="object-cover"
-                sizes="40vw"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                loading="lazy"
               />
             </motion.div>
 
             {/* Bottom Right Image */}
             <motion.div 
-              animate={{ y: [-15, 15, -15] }}
+              animate={{ y: [-12, 12, -12] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute bottom-[5%] right-[5%] w-[65%] h-[240px] rounded-[2rem] overflow-hidden border border-[#7B2CFF]/40 purple-glow z-10"
+              className="absolute bottom-[5%] right-[5%] w-[65%] h-[240px] rounded-[2rem] overflow-hidden border border-[#7B2CFF]/40 z-10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transform-gpu"
             >
               <Image 
                 src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1000&auto=format&fit=crop" 
                 alt="Networking event" 
                 fill 
                 className="object-cover"
-                sizes="40vw"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                loading="lazy"
               />
             </motion.div>
           </motion.div>
@@ -134,9 +141,9 @@ export function About() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-24 glass-card border-[#7B2CFF]/20 bg-[#1A0B35]/40 rounded-[2rem] p-8 md:p-12 w-full"
+          className="mt-24 glass-card border-[#7B2CFF]/20 bg-[#1A0B35]/40 rounded-[2rem] p-8 md:p-12 w-full transform-gpu"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x-0 md:divide-x divide-white/10">
             {stats.map((stat, idx) => (

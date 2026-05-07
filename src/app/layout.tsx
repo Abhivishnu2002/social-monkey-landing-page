@@ -4,8 +4,8 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-body" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-heading", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Social Monkey — Swing into the Nightlife",
