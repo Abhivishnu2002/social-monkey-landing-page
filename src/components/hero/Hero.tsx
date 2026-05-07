@@ -13,36 +13,37 @@ const features = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center">
-      {/* Background Elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full bg-[#7B2CFF]/20 blur-[120px] mix-blend-screen" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-[#FF2EA6]/10 blur-[100px] mix-blend-screen" />
+    <section className="relative min-h-[100dvh] pt-32 pb-20 overflow-hidden flex items-center transform-gpu">
+      {/* Background Elements - optimized by replacing CSS blur with radial gradients */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none transform-gpu">
+        <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] lg:w-[800px] lg:h-[800px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(123,44,255,0.15)_0%,rgba(123,44,255,0)_70%)] mix-blend-screen transform-gpu" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,46,166,0.1)_0%,rgba(255,46,166,0)_70%)] mix-blend-screen transform-gpu" />
         <div className="absolute inset-0 bg-[url('/Social%20monkey_page-0001.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#05010F]/80 via-[#05010F]/90 to-[#05010F]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-16 lg:gap-8 items-center mt-8 lg:mt-0">
         {/* Left Content */}
-        <div className="flex flex-col gap-8 w-full max-w-2xl mx-auto lg:mx-0">
+        <div className="flex flex-col gap-6 w-full max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center lg:items-start"
           >
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4 justify-center lg:justify-start">
               <span className="text-xl">✨</span>
-              <span className="gold-gradient font-semibold tracking-wider text-sm md:text-base uppercase">
+              <span className="gold-gradient font-semibold tracking-wider text-xs sm:text-sm uppercase">
                 Swing into the Nightlife!
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-[80px] font-heading font-black leading-[1.1] tracking-tighter uppercase">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-heading font-black leading-[1.1] tracking-tighter uppercase w-full">
               <span className="block text-white">SOCIAL MONKEY</span>
               <span className="block gold-gradient">COMING SOON</span>
             </h1>
             
-            <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-xl font-body">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-white/80 leading-relaxed font-body max-w-md lg:max-w-xl mx-auto lg:mx-0">
               Your all-in-one app to discover experiences, connect with great people, and make every night unforgettable.
             </p>
           </motion.div>
@@ -52,16 +53,16 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-4 w-full"
           >
             {features.map((item, idx) => (
-              <div key={idx} className="flex flex-col gap-3">
-                <div className="w-14 h-14 rounded-full border border-[#7B2CFF]/50 bg-[#7B2CFF]/10 flex items-center justify-center text-[#7B2CFF] shadow-[0_0_15px_rgba(123,44,255,0.2)]">
-                  <item.icon size={24} />
+              <div key={idx} className="flex flex-col items-center lg:items-start gap-2 sm:gap-3 text-center lg:text-left">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#7B2CFF]/50 bg-[#7B2CFF]/10 flex items-center justify-center text-[#7B2CFF] shadow-[0_0_15px_rgba(123,44,255,0.2)]">
+                  <item.icon size={20} className="sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="gold-gradient font-bold text-sm uppercase">{item.title}</h3>
-                  <p className="text-xs text-white/60 mt-1 leading-tight">{item.desc}</p>
+                  <h3 className="gold-gradient font-bold text-[10px] sm:text-xs uppercase whitespace-nowrap">{item.title}</h3>
+                  <p className="text-[10px] sm:text-xs text-white/60 mt-1 leading-tight hidden sm:block">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -72,24 +73,24 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative mt-8"
+            className="relative mt-8 w-full max-w-md mx-auto lg:mx-0"
           >
-            <div className="flex flex-col sm:flex-row gap-4 p-2 rounded-full glass-card max-w-xl">
+            <div className="flex flex-col sm:flex-row gap-4 p-2 rounded-3xl sm:rounded-full glass-card w-full">
               <div className="flex-1 flex items-center gap-3 px-4 py-2">
-                <Mail className="text-white/50" size={20} />
+                <Mail className="text-white/50 shrink-0" size={20} />
                 <input 
                   type="email" 
-                  placeholder="Enter your email address" 
-                  className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/50 focus:ring-0"
+                  placeholder="Enter email address" 
+                  className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/50 focus:ring-0 text-sm"
                 />
               </div>
-              <button className="animated-gradient-button sm:w-auto w-full py-4 uppercase font-bold text-sm tracking-wider gold-gradient relative overflow-hidden group">
+              <button className="animated-gradient-button w-full sm:w-auto py-3 sm:py-4 uppercase font-bold text-xs sm:text-sm tracking-wider gold-gradient relative overflow-hidden group rounded-xl sm:rounded-full">
                 <span className="text-black relative z-10 transition-colors duration-300">NOTIFY ME</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </div>
-            {/* Fake button overlay for exact design match from screenshots */}
-            <div className="absolute right-2 top-2 bottom-2 rounded-full bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] items-center justify-center px-8 sm:flex hidden hover:scale-[1.02] transition-transform cursor-pointer shadow-[0_0_20px_rgba(255,191,54,0.4)]">
+            {/* Desktop fake button overlay */}
+            <div className="absolute right-2 top-2 bottom-2 rounded-full bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] items-center justify-center px-8 hidden sm:flex hover:scale-[1.02] transition-transform cursor-pointer shadow-[0_0_20px_rgba(255,191,54,0.4)]">
                 <span className="text-black font-bold uppercase text-sm tracking-wider">NOTIFY ME</span>
             </div>
           </motion.div>
@@ -100,26 +101,28 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative h-[500px] sm:h-[600px] lg:h-[800px] w-full flex items-center justify-center lg:justify-end mt-16 lg:mt-0"
+          className="relative h-[350px] sm:h-[500px] lg:h-[700px] w-full max-w-[280px] sm:max-w-md lg:max-w-none mx-auto lg:mx-0 flex items-center justify-center lg:justify-end mt-8 lg:mt-0 transform-gpu"
         >
           {/* Back Phone */}
           <motion.div
-            animate={{ y: [0, -15, 0] }}
+            animate={{ y: [0, -5, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-1/2 lg:left-auto lg:right-[15%] top-[-5%] lg:top-[5%] z-10 scale-[0.8] sm:scale-90 md:scale-100 opacity-80"
-            style={{ transform: "translateX(-40%) rotateY(-15deg) rotateZ(5deg)" }}
+            className="absolute left-[-15%] sm:left-[-5%] lg:left-auto lg:right-[15%] top-[5%] lg:top-[5%] z-10 scale-[0.65] sm:scale-75 lg:scale-90 opacity-80 transform-gpu"
           >
-            <PhoneMockup glowColor="pink" imageSrc="/billUI.jpg" />
+            <div style={{ transform: "rotateY(-15deg) rotateZ(5deg)" }}>
+              <PhoneMockup glowColor="pink" imageSrc="/billUI.jpg" priority={true} />
+            </div>
           </motion.div>
 
           {/* Front Phone */}
           <motion.div
-            animate={{ y: [0, 15, 0] }}
+            animate={{ y: [0, 5, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute left-1/2 lg:left-auto lg:right-[35%] bottom-[-5%] lg:bottom-[5%] z-20 scale-[0.85] sm:scale-95 md:scale-110 shadow-2xl"
-            style={{ transform: "translateX(-60%) rotateY(15deg) rotateZ(-5deg)" }}
+            className="absolute right-[-15%] sm:right-[-5%] lg:right-[35%] bottom-[5%] lg:bottom-[5%] z-20 scale-[0.75] sm:scale-90 lg:scale-100 shadow-2xl transform-gpu"
           >
-            <PhoneMockup glowColor="purple" imageSrc="/PhoneUI.jpg" />
+            <div style={{ transform: "rotateY(15deg) rotateZ(-5deg)" }}>
+              <PhoneMockup glowColor="purple" imageSrc="/PhoneUI.jpg" priority={true} />
+            </div>
           </motion.div>
         </motion.div>
       </div>
