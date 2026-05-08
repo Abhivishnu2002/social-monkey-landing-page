@@ -39,7 +39,6 @@ export function PhoneMockup({ className, imageSrc, glowColor = "purple", priorit
               className="object-cover"
               sizes="(max-width: 768px) 280px, 320px"
               priority={priority}
-              quality={85}
               loading={priority ? "eager" : "lazy"}
             />
           ) : (
