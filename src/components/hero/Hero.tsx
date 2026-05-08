@@ -75,23 +75,22 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="relative mt-8 w-full max-w-md mx-auto lg:mx-0"
           >
-            <div className="flex flex-col sm:flex-row gap-4 p-2 rounded-3xl sm:rounded-full glass-card w-full">
-              <div className="flex-1 flex items-center gap-3 px-4 py-2">
-                <Mail className="text-white/50 shrink-0" size={20} />
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-1.5 sm:p-2 rounded-[2rem] sm:rounded-full glass-card w-full border border-white/10">
+              <div className="flex-1 flex items-center gap-3 px-5 py-3 sm:py-0">
+                <Mail className="text-white/40 shrink-0" size={18} />
                 <input 
                   type="email" 
                   placeholder="Enter email address" 
-                  className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/50 focus:ring-0 text-sm"
+                  className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/30 focus:ring-0 text-sm sm:text-base"
                 />
               </div>
-              <button className="animated-gradient-button w-full sm:w-auto py-3 sm:py-4 uppercase font-bold text-xs sm:text-sm tracking-wider gold-gradient relative overflow-hidden group rounded-xl sm:rounded-full">
-                <span className="text-black relative z-10 transition-colors duration-300">NOTIFY ME</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <button className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] rounded-2xl sm:rounded-full shadow-[0_0_20px_rgba(255,191,54,0.3)] hover:shadow-[0_0_30px_rgba(255,191,54,0.5)] transition-all duration-300 active:scale-[0.98] group relative overflow-hidden">
+                <span className="text-[#05010F] font-bold uppercase text-xs sm:text-sm tracking-wider relative z-10">
+                  NOTIFY ME
+                </span>
+                {/* Glossy overlay effect */}
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
-            </div>
-            {/* Desktop fake button overlay */}
-            <div className="absolute right-2 top-2 bottom-2 rounded-full bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] items-center justify-center px-8 hidden sm:flex hover:scale-[1.02] transition-transform cursor-pointer shadow-[0_0_20px_rgba(255,191,54,0.4)]">
-                <span className="text-black font-bold uppercase text-sm tracking-wider">NOTIFY ME</span>
             </div>
           </motion.div>
         </div>
@@ -101,7 +100,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative h-[350px] sm:h-[500px] lg:h-[700px] w-full max-w-[280px] sm:max-w-md lg:max-w-none mx-auto lg:mx-0 flex items-center justify-center lg:justify-end mt-8 lg:mt-0 transform-gpu"
+          className="relative h-[450px] sm:h-[550px] lg:h-[700px] w-full max-w-[280px] sm:max-w-md lg:max-w-none mx-auto lg:mx-0 flex items-center justify-center lg:justify-end mt-12 sm:mt-16 lg:mt-0 transform-gpu"
         >
           {/* Back Phone */}
           <motion.div

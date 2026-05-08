@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-monkey-bg: #05010F;
+  --color-monkey-purple: #7B2CFF;
+  --color-monkey-pink: #FF2EA6;
+  --color-monkey-gold: #FFBF36;
+  --color-monkey-white: #F5F5F5;
+  --color-monkey-muted: rgba(255, 255, 255, 0.7);
+
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    background-color: var(--color-monkey-bg);
+    color: var(--color-monkey-white);
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+  }
+  
+  .neon-border {
+    border: 1px solid rgba(123, 44, 255, 0.5);
+    box-shadow: 0 0 15px rgba(123, 44, 255, 0.3);
+  }
+  
+  .gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, var(--color-monkey-pink), var(--color-monkey-purple));
+  }
+  
+  .gold-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, var(--color-monkey-gold), #FFAA00);
+  }
+  
+  .purple-glow {
+    box-shadow: 0 0 30px rgba(123, 44, 255, 0.5);
+  }
+  
+  .pink-glow {
+    box-shadow: 0 0 30px rgba(255, 46, 166, 0.5);
+  }
+  
+  .animated-gradient-button {
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(to right, var(--color-monkey-purple), var(--color-monkey-pink));
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .animated-gradient-button:hover {
+    box-shadow: 0 0 20px rgba(123, 44, 255, 0.6);
+  }
+  
+  .animated-gradient-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--color-monkey-pink), var(--color-monkey-purple));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .animated-gradient-button:hover::before {
+    opacity: 1;
+  }
+}

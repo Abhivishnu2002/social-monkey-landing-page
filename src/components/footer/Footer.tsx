@@ -20,9 +20,9 @@ export function Footer() {
               <Image 
                 src="/socialmonkey.png" 
                 alt="Social Monkey Logo" 
-                width={160} 
-                height={60} 
-                className="h-10 w-auto object-contain"
+                width={240} 
+                height={90} 
+                className="h-16 w-auto object-contain"
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed">

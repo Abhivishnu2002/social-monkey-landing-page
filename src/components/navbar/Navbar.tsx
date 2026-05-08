@@ -44,9 +44,9 @@ export function Navbar() {
           <Image 
             src="/socialmonkey.png" 
             alt="Social Monkey Logo" 
-            width={160} 
-            height={60} 
-            className="h-8 sm:h-10 w-auto object-contain"
+            width={240} 
+            height={90} 
+            className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
             priority
           />
         </Link>
@@ -96,9 +96,9 @@ export function Navbar() {
           <Image 
             src="/socialmonkey.png" 
             alt="Social Monkey Logo" 
-            width={180} 
-            height={70} 
-            className="mb-4 w-auto h-12 sm:h-16 object-contain"
+            width={280} 
+            height={100} 
+            className="mb-8 w-auto h-20 sm:h-24 object-contain"
           />
           {navLinks.map((link, idx) => (
             <Link
