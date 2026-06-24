@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, Users, Wine, CreditCard, Mail } from "lucide-react";
+import { Calendar, Users, Wine, CreditCard, Download } from "lucide-react";
 import { PhoneMockup } from "@/components/ui/PhoneMockup";
 
 const features = [
@@ -68,30 +68,25 @@ export function Hero() {
             ))}
           </motion.div>
 
-          {/* Notify Form */}
+          {/* Download Button */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative mt-8 w-full max-w-md mx-auto lg:mx-0"
+            className="relative mt-8 w-full max-w-xs mx-auto lg:mx-0"
           >
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 p-1.5 sm:p-2 rounded-[2rem] sm:rounded-full glass-card w-full border border-white/10">
-              <div className="flex-1 flex items-center gap-3 px-5 py-3 sm:py-0">
-                <Mail className="text-white/40 shrink-0" size={18} />
-                <input 
-                  type="email" 
-                  placeholder="Enter email address" 
-                  className="w-full bg-transparent border-none outline-none text-white placeholder:text-white/30 focus:ring-0 text-sm sm:text-base"
-                />
-              </div>
-              <button className="w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] rounded-2xl sm:rounded-full shadow-[0_0_20px_rgba(255,191,54,0.3)] hover:shadow-[0_0_30px_rgba(255,191,54,0.5)] transition-all duration-300 active:scale-[0.98] group relative overflow-hidden">
-                <span className="text-[#05010F] font-bold uppercase text-xs sm:text-sm tracking-wider relative z-10">
-                  NOTIFY ME
-                </span>
-                {/* Glossy overlay effect */}
-                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </button>
-            </div>
+            <a 
+              href="/apk/app-release.apk" 
+              download="app-release.apk"
+              className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 bg-gradient-to-r from-[#FFBF36] to-[#FFAA00] rounded-full shadow-[0_0_20px_rgba(255,191,54,0.3)] hover:shadow-[0_0_30px_rgba(255,191,54,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group relative overflow-hidden text-center cursor-pointer"
+            >
+              <Download className="text-[#05010F] shrink-0 group-hover:translate-y-0.5 transition-transform" size={20} />
+              <span className="text-[#05010F] font-extrabold uppercase text-sm tracking-wider relative z-10">
+                DOWNLOAD NOW
+              </span>
+              {/* Glossy overlay effect */}
+              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
           </motion.div>
         </div>
 

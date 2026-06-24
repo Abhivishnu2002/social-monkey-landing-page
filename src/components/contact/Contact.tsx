@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Download } from "lucide-react";
 import { Instagram, Facebook, Twitter, Youtube } from "@/components/ui/Icons";
 
 export function Contact() {
@@ -109,7 +109,7 @@ export function Contact() {
 
         </div>
 
-        {/* Newsletter Bar */}
+        {/* Download APK Bar */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,25 +119,25 @@ export function Contact() {
         >
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left">
             <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-[#05010F] border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
-              <Mail className="text-[#FF2EA6] w-6 h-6 sm:w-7 sm:h-7" />
+              <Download className="text-[#FF2EA6] w-6 h-6 sm:w-7 sm:h-7" />
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-1 sm:mb-2 uppercase">STAY IN THE LOOP</h3>
-              <p className="text-white/70 text-xs sm:text-sm max-w-xs sm:max-w-sm mx-auto sm:mx-0">Get updates on our launch, exclusive offers, and curated events.</p>
+              <h3 className="text-xl sm:text-2xl font-heading font-bold text-white mb-1 sm:mb-2 uppercase">GET THE APP NOW</h3>
+              <p className="text-white/70 text-xs sm:text-sm max-w-xs sm:max-w-sm mx-auto sm:mx-0">Download the APK file directly to your device and start your journey.</p>
             </div>
           </div>
           
-          <div className="w-full lg:w-auto flex-1 max-w-md mx-auto lg:mx-0">
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 rounded-xl sm:rounded-2xl overflow-hidden sm:border border-white/10 sm:bg-[#05010F]/50 focus-within:border-[#7B2CFF] focus-within:shadow-[0_0_15px_rgba(123,44,255,0.2)] transition-all">
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className="w-full bg-[#05010F]/50 sm:bg-transparent border border-white/10 sm:border-none rounded-xl sm:rounded-none px-4 py-3 sm:px-5 sm:py-4 text-white placeholder:text-white/40 focus:outline-none text-sm"
-              />
-              <button className="w-full sm:w-auto bg-gradient-to-r from-[#7B2CFF] to-[#FF2EA6] text-white font-bold uppercase text-xs tracking-wider px-6 py-4 sm:px-8 sm:py-4 hover:brightness-110 transition-all whitespace-nowrap rounded-xl sm:rounded-none">
-                NOTIFY ME
-              </button>
-            </div>
+          <div className="w-full lg:w-auto flex-1 max-w-xs mx-auto lg:mx-0 flex justify-center lg:justify-end">
+            <a 
+              href="/apk/app-release.apk" 
+              download="app-release.apk"
+              className="inline-flex items-center justify-center gap-3 w-full px-8 py-4 bg-gradient-to-r from-[#7B2CFF] to-[#FF2EA6] rounded-full shadow-[0_0_20px_rgba(123,44,255,0.3)] hover:shadow-[0_0_30px_rgba(123,44,255,0.5)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group relative overflow-hidden text-center cursor-pointer text-white font-extrabold uppercase text-sm tracking-wider"
+            >
+              <Download className="text-white shrink-0 group-hover:translate-y-0.5 transition-transform" size={20} />
+              <span>DOWNLOAD NOW</span>
+              {/* Glossy overlay effect */}
+              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </a>
           </div>
         </motion.div>
 
