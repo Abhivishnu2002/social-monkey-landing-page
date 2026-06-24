@@ -72,9 +72,13 @@ export function Navbar() {
             <Link href="#" className="hover:text-[#7B2CFF] transition-colors"><Facebook size={18} /></Link>
             <Link href="#" className="hover:text-white transition-colors"><Twitter size={18} /></Link>
           </div>
-          <button className="animated-gradient-button text-sm px-6 py-2.5">
-            GET UPDATES
-          </button>
+          <a
+            href="/apk/app-release.apk"
+            download="app-release.apk"
+            className="animated-gradient-button text-sm px-6 py-2.5"
+          >
+            DOWNLOAD NOW
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -115,7 +119,14 @@ export function Navbar() {
             <Link href="#" className="text-white hover:text-[#7B2CFF] transition-colors p-2"><Facebook size={24} /></Link>
             <Link href="#" className="text-white hover:text-white transition-colors p-2"><Twitter size={24} /></Link>
           </div>
-          <button className="animated-gradient-button mt-4 w-full max-w-xs text-center justify-center flex">GET UPDATES</button>
+          <a
+            href="/apk/app-release.apk"
+            download="app-release.apk"
+            className="animated-gradient-button mt-4 w-full max-w-xs text-center justify-center flex"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            DOWNLOAD NOW
+          </a>
         </motion.div>
       </div>
     </motion.header>
